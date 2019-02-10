@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ice HW Flexbox 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        * {
+            margin: 2px;
+        }
+        
+        body {
+            padding: 0%;
+            margin: 0%;
+            height: 100vh;
+            background-color: black;
+            flex-flow: column wrap;
+            /*flex-direction and flex-wrap*/
+            display: flex;
+        }
+        
+        .main-content {
+            display: flex;
+            flex: 1;
+        }
+        
+        .header {
+            background-color: greenyellow;
+            padding-bottom: 100px;
+            flex-direction: row;
+        }
+        
+        .nav {
+            background-color: green;
+            height: 1000px;
+            width: auto;
+        }
+        
+        .article {
+            background-color: white;
+            flex: 4 4;
+        }
+        
+        .aside {
+            background-color: tan;
+            flex: 1 1 5rem;
+            height: 830px;
+        }
+        
+        .footer {
+            background-color: greenyellow;
+            padding-top: 100px;
+            width: 488px;
+        }
+        
+        @media all and (max-width: 540px) {
+            .main-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">Nav</nav>
+    <header class="header">Header</header>
+    <main class="main-content">
+        <article class="article">Article</article>
+        <aside class="aside">Aside</aside>
+
+    </main>
+    <footer class="footer">Footer</footer>
+</body>
+
+</html>
