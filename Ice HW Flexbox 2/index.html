@@ -11,49 +11,55 @@
         * {
             margin: 2px;
         }
-        
+
         body {
             padding: 0%;
             margin: 0%;
             height: 100vh;
             background-color: black;
-            flex-flow: column wrap;
-            /*flex-direction and flex-wrap*/
             display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
         }
-        
+
         .main-content {
             display: flex;
-            flex: 1;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 0%;
         }
-        
+
         .header {
             background-color: greenyellow;
             padding-bottom: 100px;
             flex-direction: row;
         }
-        
+
         .nav {
             background-color: green;
             height: 1000px;
             width: auto;
         }
-        
+
         .article {
             background-color: white;
-            flex: 4 4;
+            flex-grow: 4;
+            flex-shrink: 4;
+            flex-basis: 0%;
         }
-        
+
         .aside {
             background-color: tan;
-            flex: 1 1 5rem;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 5rem;
         }
-        
+
         .footer {
             background-color: greenyellow;
             padding-top: 100px;
         }
-        
+
         @media all and (max-width: 540px) {
             .main-content {
                 flex-direction: column;
