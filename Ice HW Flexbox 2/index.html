@@ -8,69 +8,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
-        * {
-            margin: 2px;
-        }
-        
         body {
-            padding: 0%;
-            margin: 0%;
-            height: 100vh;
-            background-color: black;
-            flex-flow: column wrap;
-            /*flex-direction and flex-wrap*/
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .container.main {
+            min-height: 100vh;
+        }
+
+        .container {
             display: flex;
         }
-        
-        .main-content {
-            display: flex;
-            flex: 1;
+
+        .container>* {
+            flex-grow: 1;
         }
-        
-        .header {
-            background-color: greenyellow;
-            padding-bottom: 100px;
-            flex-direction: row;
+
+        .container>nav,
+        .container>header,
+        .container>footer,
+        .container>aside {
+            flex-grow: .3;
         }
-        
-        .nav {
-            background-color: green;
-            height: 1000px;
-            width: auto;
+
+        .container.vert {
+            flex-direction: column;
         }
-        
-        .article {
-            background-color: white;
-            flex: 4 4;
+
+        nav {
+            background-color: #d7e8d5;
         }
-        
-        .aside {
-            background-color: tan;
-            flex: 1 1 5rem;
+
+        header,
+        footer {
+            background-color: #9acd32;
         }
-        
-        .footer {
-            background-color: greenyellow;
-            padding-top: 100px;
-        }
-        
-        @media all and (max-width: 540px) {
-            .main-content {
-                flex-direction: column;
-            }
+
+        aside {
+            background-color: #f5f5dd;
         }
     </style>
 </head>
 
 <body>
-    <nav class="nav">Nav</nav>
-    <header class="header">Header</header>
-    <main class="main-content">
-        <article class="article">Article</article>
-        <aside class="aside">Aside</aside>
-
-    </main>
-    <footer class="footer">Footer</footer>
+    <div class="container main">
+        <nav><span>Nav</span></nav>
+        <div class="container vert">
+            <header><span>Header</span></header>
+            <div class="container">
+                <div><span>Article</span></div>
+                <aside><span>Aside</span></aside>
+            </div>
+            <footer><span>Footer</span></footer>
+        </div>
+    </div>
 </body>
 
 </html>
