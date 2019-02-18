@@ -8,75 +8,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
-        * {
-            margin: 2px;
-        }
-
         body {
-            padding: 0%;
-            margin: 0%;
-            height: 100vh;
-            background-color: black;
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .container.main {
+            min-height: 100vh;
+        }
+
+        .container {
             display: flex;
+        }
+
+        .container>* {
+            flex-grow: 1;
+        }
+
+        .container>nav,
+        .container>header,
+        .container>footer,
+        .container>aside {
+            flex-grow: .3;
+        }
+
+        .container.vert {
             flex-direction: column;
-            flex-wrap: wrap;
         }
 
-        .main-content {
-            display: flex;
-            flex-grow: 1;
-            flex-shrink: 1;
-            flex-basis: 0%;
+        nav {
+            background-color: #d7e8d5;
         }
 
-        .header {
-            background-color: greenyellow;
-            padding-bottom: 100px;
-            flex-direction: row;
+        header,
+        footer {
+            background-color: #9acd32;
         }
 
-        .nav {
-            background-color: green;
-            height: 1000px;
-            width: auto;
-        }
-
-        .article {
-            background-color: white;
-            flex-grow: 4;
-            flex-shrink: 4;
-            flex-basis: 0%;
-        }
-
-        .aside {
-            background-color: tan;
-            flex-grow: 1;
-            flex-shrink: 1;
-            flex-basis: 5rem;
-        }
-
-        .footer {
-            background-color: greenyellow;
-            padding-top: 100px;
-        }
-
-        @media all and (max-width: 540px) {
-            .main-content {
-                flex-direction: column;
-            }
+        aside {
+            background-color: #f5f5dd;
         }
     </style>
 </head>
 
 <body>
-    <nav class="nav">Nav</nav>
-    <header class="header">Header</header>
-    <main class="main-content">
-        <article class="article">Article</article>
-        <aside class="aside">Aside</aside>
-
-    </main>
-    <footer class="footer">Footer</footer>
+    <div class="container main">
+        <nav><span>Nav</span></nav>
+        <div class="container vert">
+            <header><span>Header</span></header>
+            <div class="container">
+                <div><span>Article</span></div>
+                <aside><span>Aside</span></aside>
+            </div>
+            <footer><span>Footer</span></footer>
+        </div>
+    </div>
 </body>
 
 </html>
